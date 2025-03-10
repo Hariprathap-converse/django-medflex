@@ -664,7 +664,7 @@
                                 {% for day in days_of_week %}
                                     {% with availabilities|get:day as availability %}
                                         <div class="input-container">
-                                            <label class="form-label" for="qualification">{{ day|slice:":3"|capfirst }}</label>
+                                            <label class="form-label" for="{{ day }}">{{ day|slice:":3"|capfirst }}</label>
                                             <div class="input-group available">
                                                 <input type="hidden" value="{{ day }}" name="day_of_week">
 
