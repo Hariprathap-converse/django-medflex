@@ -945,7 +945,7 @@ input[type="radio"]:checked + label::before {
 }
 
 .sidebar-menu {
-  max-height: calc(100% - 89px);
+  max-height: calc(82% - 89px);
   list-style-type: none;
   height: 86%;
   padding: 0;
