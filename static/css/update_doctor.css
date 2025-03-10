@@ -30,6 +30,7 @@
   background-color: #e9f2ff;
 }
 .img-input-wrappers {
+  
   display: flex;
   justify-content: flex-start;
   align-items: start;

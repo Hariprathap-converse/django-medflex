@@ -390,6 +390,7 @@ label {
   }
 
   .search-container .form-control {
+    cursor: pointer;
     border-radius: 0.375rem;
   }
 

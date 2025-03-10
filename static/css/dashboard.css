@@ -227,6 +227,7 @@
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  cursor: pointer;
   color: #0f1115;
   appearance: none;
   background-color: #ffffff;
@@ -248,6 +249,7 @@
 .search-container .form-control {
   width: 100%;
   transition: all 0.5s ease-in-out;
+  cursor: pointer;
   min-height: 30px;
   height: 33.6px;
   padding-left: 36px;
@@ -264,6 +266,7 @@
 .search-container .form-control:focus {
   width: 100%;
   outline: none;
+  cursor: pointer;
   box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.1);
   border-color: transparent;
 }
