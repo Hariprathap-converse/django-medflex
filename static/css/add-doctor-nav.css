@@ -22,7 +22,7 @@
 }
 
 .sidebar-menu {
-  height: calc(100% - 89px);
+  height: calc(82% - 89px);
   list-style-type: none;
   padding: 0;
 }
