@@ -1,0 +1,439 @@
+{% load static %}
+{% load custom_filters %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+        <link rel="stylesheet" href="{% static 'css/add-doctor-nav.css' %}">
+
+        <title>Doctor Profile</title>
+        <link rel="stylesheet" href="{% static 'css/single_doctor.css' %}">
+    </head>
+
+
+    <body>
+
+    </div>
+    <div class="loader " id="loading-wrapper">
+        <div class="spin-wrapper">
+            <div class="spin">
+                <div class="inner"></div>
+            </div>
+            <div class="spin">
+                <div class="inner"></div>
+            </div>
+            <div class="spin">
+                <div class="inner"></div>
+            </div>
+            <div class="spin">
+                <div class="inner"></div>
+            </div>
+            <div class="spin">
+                <div class="inner"></div>
+            </div>
+            <div class="spin">
+                <div class="inner"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="parent-wrapper pinned " id="parent-wrapper">
+    <div class="navbar-container">
+        <div class="sidebar">
+            <div class="logo-conatiner" id="logo-conatiner">
+                <button class="pin-sidebar">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+            <div class="app-brand">
+                <a href="{% url 'dashboard' %}">
+                    <img src="{% static 'images/logo2.svg' %}" class="logo" alt="Medicare Admin Template">
+                </a>
+                <a href="{% url 'dashboard' %}">
+                    <img src="  {% static 'images/logo-sm.svg' %}" class="logo1" alt="Medicare Admin Template">
+                </a>
+            </div>
+        </div>
+        <div class="header-actions">
+            <div class="search-container">
+                <input type="text" class="form-control" id="searchId" placeholder="Search">
+                <i class="ri-search-line"></i>
+            </div>
+            <div class="buttons-container">
+                <a class="dropdown-toggle header-icon" href="#!" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false">
+                    <img src=" {% static 'images/fr.svg' %}" class="header-country-flag" alt="Bootstrap Dashboards">
+                </a>
+                <a class="dropdown-toggle header-icon" href="#!" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false">
+                    <i class="ri-list-check-3"></i>
+                    <span class="count-label warning"></span>
+                </a>
+                <a class="dropdown-toggle header-icon" href="#!" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false">
+                    <i class="ri-alarm-warning-line"></i>
+                    <span class="count-label success"></span>
+                </a>
+                <a class="dropdown-toggle header-icon" href="#!" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false">
+                    <i class="ri-message-3-line"></i>
+                    <span class="count-label"></span>
+                </a>
+            </div>
+            <div class="avatar-box" id="profile">
+                {{ user.username|slice:":2"|upper }}
+                <span class="status busy"></span>
+            </div>
+            <div id="profile-container" class="dropdown hidden">
+                <div class="contant">
+                    <span class="small">{{user.username|title}}</span>
+                    <h6>{{user.email}}</h6>
+                </div>
+                <div class="button-container">
+                    <a href="{% url 'logout' %}">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="navbar-wrapper " id="navbar-wrapper">
+            <div class="side-profile">
+                <img class="profile-img" {% if doctor and doctor.update_profile %}
+                         src="{{ doctor.update_profile.url }}" alt="img not" {% else %}
+                         src="{% static 'images/user-img.png' %}" {% endif %} alt="user">
+                <div class="profile-info">
+                    <h5>{{ user.username|title }}</h5>
+                    <p>{{ user.email }}</p>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <ul class="nav-options">
+                    <li>
+                        <i class="ri-home-6-line"></i> <span>Hospital Dashboard</span>
+                    </li>
+                    <li>
+                        <i class="ri-home-smile-2-line"></i> <span>Medical Dashboard</span>
+                    </li>
+                    <li>
+
+                        <i class="ri-home-5-line"></i> <span>Dentist Dashboard</span>
+
+                    </li>
+
+                    <li class="treeview doctor-main">
+                        <i class="ri-stethoscope-line"></i> <span>Doctor</span>
+                    </li>
+                    <div class="doctor-options hidden">
+                        <ul>
+                            <li><span class="extra-space-nav"></span> <a href="{% url 'dashboard' %}" class="anchor"><span>Add Doctor</span></a>
+                            </li>
+                            {% if doctor %}
+                                <li><span class="extra-space-nav"></span><a href="{% url 'doctor-list-view' %}" class="anchor"> <span>Doctors
+                                    List</span></a></li>
+                                <li><span class="extra-space-nav"></span><a href="{% url 'doctor_data' %}" class="anchor"><span>Doctors
+                                    Profile</span></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <li class="treeview">
+                        <i class="ri-heart-pulse-line"></i> <span>Patients</span>
+                    </li>
+                    <li class="treeview">
+                        <i class="ri-nurse-line"></i> <span>Staff</span>
+                    </li>
+                    <li class="treeview">
+                        <i class="ri-dossier-line"></i> <span>Appointments</span>
+                    </li>
+                    <li class="treeview">
+                        <i class="ri-building-2-line"></i> <span>Departments</span>
+                    </li>
+                    <li>
+                        <i class="ri-secure-payment-line"></i> <span>Accounts</span>
+                    </li>
+                    <li>
+                        <i class="ri-group-2-line"></i> <span>Human Resources</span>
+                    </li>
+                    <li>
+                        <i class="ri-money-dollar-circle-line"></i> <span>Salaries</span>
+                    </li>
+                    <li>
+                        <i class="ri-hotel-bed-line"></i> <span>Rooms</span>
+                    </li>
+                    <li>
+                        <i class="ri-car-washing-line"></i> <span>Ambulance</span>
+                    </li>
+                    <li>
+                        <i class="ri-calendar-line"></i> <span>Event Management</span>
+                    </li>
+                </ul>
+                <div class="sidebar-contact">
+                    <div class="sidebar-wrapper">
+                        <div class=" phone-icon">
+                            <i class="ri-phone-line"></i>
+                        </div>
+                        <div class="content-details">
+                            <p>Emergency Contact</p>
+                            <h5>0987654321</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="app-container">
+            <div class="nav-container1 ">
+                <ol>
+                    <li>
+                        <i class="ri-home-8-line"></i>
+                        <a class="home-a" href="{% url 'dashboard' %}">Home</a>
+                    </li>
+                    <li class="add-docter">
+                        <span class="add-doctora">Doctors Profile</span>
+                    </li>
+                </ol>
+                <div class="nav-container2 ">
+                    <div class="today data-today">Today</div>
+                    <div class="day">7d</div>
+                    <div class="day">2w</div>
+                    <div class="day">1m</div>
+                    <div class="day">3m</div>
+                    <div class="day">6m</div>
+                    <div class="day">1y</div>
+                </div>
+            </div>
+            <div class="information-container">
+                <div class="content-wrapper-details">
+                    <div class="view-container-warpper">
+                        <div class="profile-details-list">
+                            <div class="view-data-wrapper">
+                                <div class="img-container">
+                                    <img src="{% static 'images/user3.png' %}" alt="image user">
+                                </div>
+                            </div>
+                            <div class="profile-details-data">
+                                <h6>Hello I am,</h6>
+                                <h3>Dr. Jessika Linda</h3>
+                                <h6>MBBS, MS - General Surgery, General Physician</h6>
+                                <h6>16 Years Experience Overall</h6>
+                                <div class="rating">
+                                    <img src="{% static 'images/star-selected.svg' %}" alt="star1">
+                                    <img src="{% static 'images/star-selected.svg' %}" alt="star2">
+                                    <img src="{% static 'images/star-selected.svg' %}" alt="star3">
+                                    <img src="{% static 'images/star-selected.svg' %}" alt="star4">
+                                    <img src="{% static 'images/star-selected.svg' %}" alt="star5">
+                                </div>
+                                <div class="revies-data">2896 Reviews</div>
+                            </div>
+                        </div>
+                        <div class="other-container">
+                            <div class="patients-data">
+                                <div class="icon-wrapper">
+                                    <i class="ri-empathize-line text-primary"></i>
+                                </div>
+                                <h1 class="text-primary">3605</h1>
+                                <h6>Patients</h6>
+                                <span class="badge bg-primary">68% High</span>
+                            </div>
+                            <div class="surgeries-data ">
+                                <div class="icon-wrapper icon-danger">
+                                    <i class="ri-lungs-line fs-1 text-danger"></i>
+                                </div>
+                                <h1 class="text-danger">507</h1>
+                                <h6>Surgeries</h6>
+                                <span class="badge bg-danger">28% High</span>
+                            </div>
+                            <div class="reviews-data ">
+                                <div class="icon-wrapper icon-success">
+                                    <i class="ri-star-line fs-1 text-success"></i>
+                                </div>
+                                <h1 class="text-success">2896</h1>
+                                <h6>Reviews</h6>
+                                <span class="badge bg-success">30% High</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="second-view-container">
+                        <div class="about-review-container">
+                            <div class="about-container">
+                                <div class="about-header">
+                                    <h5 class="about-title">About</h5>
+                                </div>
+                                <div class="par-data">
+                                    <p>
+                                        Dr. Jessika Linda is an eminent Endocrinologist associated with med
+                                        hospitals
+                                        who is specially
+                                        trained to diagnose diseases related to glands. She specialises in treating
+                                        people
+                                        who suffer from hormonal imbalances, typically from glands in the endocrine
+                                        system. The most
+                                        common conditions treated by Dr. Linda are Diabetes, Metabolic disorders,
+                                        Lack
+                                        of
+                                        growth, Osteoporosis, Thyroid diseases, Cancers of the endocrine glands,
+                                        Over-
+                                        or
+                                        under-production of hormones, Cholesterol disorders, Hypertension and
+                                        Infertility. Also
+                                        available for consultation at Med hospital. Dr. Linda's approach lies in
+                                        understanding
+                                        patients diseases and the procedure recommended along with care.</p>
+                                </div>
+                                <div class="special-buttons">
+                                    <h6>Specialized in</h6>
+                                    <div class="special-buttons-data">
+                                        <span class="badge bg-primary">Diabetes</span>
+                                        <span class="badge bg-primary">Thyroid</span>
+                                        <span class="badge bg-primary">Osteoporosis</span>
+                                        <span class="badge bg-primary">Surgeon</span>
+                                        <span class="badge bg-primary">General</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-container">
+                                <div class="about-header">
+                                    <h5 class="about-title">Reviews</h5>
+                                </div>
+                                <div class="review-data">
+                                    <div class="review-data-wrapper">
+                                        <div class="reviewer-img">
+                                            <img src="{% static 'images/patient1.png' %}" alt="">
+                                        </div>
+                                        <div class="review-content">
+                                            <span class="review-text review-text-primary">Excellent</span>
+                                            <h6>Wendi Combs</h6>
+                                            <p>I am consulting with her for last 10 years and she is really good in
+                                                thyroid. Her experience has greatest strength. By looking at the
+                                                report
+                                                she will
+                                                diagnosis the problem and listen to us. We might think she is in a
+                                                hurry
+                                                to complete the
+                                                patient but her experience makes her 100%.</p>
+                                            <p><i class="ri-thumb-up-line"></i> I recommend the doctor.</p>
+                                            <div class="rating">
+                                                <img src="{% static 'images/star-selected.svg' %}" alt="star1">
+                                                <img src="{% static 'images/star-selected.svg' %}" alt="star2">
+                                                <img src="{% static 'images/star-selected.svg' %}" alt="star3">
+                                                <img src="{% static 'images/star-selected.svg' %}" alt="star4">
+                                                <img src="{% static 'images/star-selected.svg' %}" alt="star5">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-data-wrapper">
+                                        <div class="reviewer-img">
+                                            <img src="{% static 'images/patient2.png' %}" alt="">
+                                        </div>
+                                        <div class="review-content">
+                                            <span class="review-text review-text-primary">Excellent</span>
+                                            <h6>Nick Morrow</h6>
+                                            <p>Dr.Jessika is my physician from past four years. Till now, whatever
+                                                treatment and advice she has given me is of the best kind. I am
+                                                extremely satisfied with
+                                                it. There may be about 10 minutes of waiting period before
+                                                consultation. The hospital
+                                                and staff are good as well.</p>
+                                            <p><i class="ri-thumb-up-line"></i> I recommend the doctor.</p>
+                                            <div class="rating">
+                                                <img src="{% static 'images/star-selected.svg' %}" alt="star1">
+                                                <img src="{% static 'images/star-selected.svg' %}" alt="star2">
+                                                <img src="{% static 'images/star-selected.svg' %}" alt="star3">
+                                                <img src="{% static 'images/star-selected.svg' %}" alt="star4">
+                                                <img src="{% static 'images/star-selected.svg' %}" alt="star5">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-data-wrapper">
+                                        <div class="reviewer-img">
+                                            <img src="{% static 'images/patient3.png' %}" alt="">
+                                        </div>
+                                        <div class="review-content">
+                                            <span class="review-text review-text-danger ">Bad</span>
+                                            <h6>Carole Dodson</h6>
+                                            <p>Its a not recommerded example. Its a not recommerded example. Its a
+                                                not
+                                                recommerded example. Its a not recommerded example.
+                                            </p>
+                                            <p><i class="ri-thumb-up-line"></i> I recommend the doctor.</p>
+                                            <div class="rating">
+                                                <img src="{% static 'images/star-selected.svg' %}" alt="star1">
+                                                <img src="{% static 'images/star-selected.svg' %}" alt="star2">
+                                                <img src="{% static 'images/emptystar.svg' %}" alt="star3">
+                                                <img src="{% static 'images/emptystar.svg' %}" alt="star4">
+                                                <img src="{% static 'images/emptystar.svg' %}" alt="star5">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="load-more">Load More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="availability-reward-conatiner">
+                            <div class="availability-container">
+                                <div class="about-header">
+                                    <h5 class="about-title">Availability</h5>
+                                </div>
+                                <div class="availability-datas">
+                                    <span class="availability-button"> Mon - 9:AM - 2:PM</span>
+                                    <span class="availability-button"> Tue - 9:AM - 2:PM</span>
+                                    <span class="availability-button"> Wed - 9:AM - 2:PM</span>
+                                    <span class="availability-button"> Thu - 9:AM - 2:PM</span>
+                                    <span class="availability-button"> Fri - 9:AM - 2:PM</span>
+                                        <!-- <div class="fri-sun-wrapper"> -->
+                                    <span class="availability-button"> Sat - 9:AM - 2:PM</span>
+                                    <span class="availability-button"> Sun - NA</span>
+                                        <!-- </div> -->
+                                </div>
+                                <div>
+                                    <button class="load-more book">Book Appointment </button>
+                                </div>
+                            </div>
+                            <div class="reward-container">
+                                <div class="about-header">
+                                    <h5 class="about-title">Awards</h5>
+                                </div>
+                                <div class="slider-container">
+                                    <div class="button-position-wrapper">
+                                        <div class="awards-images-wrapper">
+                                            <img src="{% static 'images/award.svg' %}" alt="award">
+                                            <img src="{% static 'images/award1.svg' %}" alt="award1">
+                                            <img src="{% static 'images/award2.svg' %}" alt="award2">
+
+                                        </div>
+                                        <button class="right-button"></button>
+                                        <button class="left-button"></button>
+                                        <div class="indicators">
+                                            <button type="button"></button>
+                                            <button type="button"></button>
+                                            <button type="button"></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="award-footer">
+                                        <h1 class="text-primary">4</h1>
+                                        Awards received in 2024
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <span>© Medflex admin 2024</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</body>
+<script src="{% static 'js/single_doctor.js' %}"></script>
+
+
+</html>

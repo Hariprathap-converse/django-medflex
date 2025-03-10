@@ -1,0 +1,104 @@
+{% load static %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+  </head>
+
+
+  <body>
+    <div class="bodyparent">
+      <div class="sperator"></div>
+      <div class="auth-wrapper">
+        <div class="makespace">
+        </div>
+        <div class="auth-box">
+
+          <div class="medflex-logo">
+            <a href="{% url 'login' %}">
+              <img class="logosvg"  src="{% static 'images/logo-dark.svg' %}" alt="medfelxogo">
+            </a>
+          </div>
+          <div class="login-content">
+            <form method="POST">
+              {% csrf_token %}
+              <div class="login-conatiner">
+                <h4>Signup</h4>
+                <div class="input-container">
+                  <label class="form-label" for="name">Your name <span class="text-danger">*</span></label>
+
+                  {% if error_fields.username %}
+                    <div class="error-tooltip">{{ error_fields.username.0}}</div>
+                  {% endif %}
+
+                  <input type="text" id="name" name="username"
+                         class="form-control {% if error_fields.username %} error-border {% endif %}"
+                         placeholder="Enter your name" value="{{ request.POST.username }}">
+                </div>
+
+                <div class="input-container your-email">
+                  <label class="form-label " for="email">Your email <span class="text-danger">*</span></label>
+
+                  {% if error_fields.email %}
+                    <div class="error-tooltip">{{ error_fields.email.0 }}</div>
+                  {% endif %}
+
+                  <input type="text" id="email" name="email"
+                         class="form-control {% if error_fields.email %} error-border {% endif %}"
+                         placeholder="Enter your email" value="{{ request.POST.email }}">
+                </div>
+
+                <div class="input-container  your-password">
+                  <label class="form-label set-style" for="password">Your password <span class="text-danger">*</span></label>
+
+                  {% if error_fields.password %}
+                    <div class="error-tooltip">{{ error_fields.password.0 }}</div>
+                  {% endif %}
+
+                  <div class="input-group">
+                    <input type="password" id="password" name="password"
+                           class="form-control {% if error_fields.password %} error-border {% endif %}"
+                           placeholder="Enter password" value="{{ request.POST.password }}">
+                    <button type="button" id="eye-icon" class="eye-icon">
+                      <i class="ri-eye-line"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-text">
+                  Your password must be 8-20 characters long.
+                </div>
+
+                <div class="button-container">
+                  <button type="submit" class="loginbutton">Signup</button>
+                  <a href="{% url 'login' %}" class="singinbutton">Already have an account? Login</a>
+                </div>
+                <a class="google-button" href="{% provider_login_url 'google' %}">
+                  <img class="google" src="{% static 'images/google.svg' %}" title="Sign in with Google" alt="Google Logo">
+                </a>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </body>
+      <script>
+        document.getElementById('eye-icon').addEventListener('click',function (){
+          const passwordContainer =document.getElementById('password');
+          if (passwordContainer.type == 'password'){
+            passwordContainer.type = 'text'
+          }else{
+            passwordContainer.type = 'password'
+          }
+        })
+      </script>
+    </html>

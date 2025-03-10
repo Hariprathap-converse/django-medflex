@@ -1,0 +1,1177 @@
+* {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bodyparent {
+  background: #0f1115 url("../images/login-bg.jpg") no-repeat;
+  /*background: #0f1115 url(login-bg.jpg) no-repeat;*/
+  background-size: cover;
+  background-position: bottom center;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+}
+
+.sperator {
+  background-color: transparent;
+  width: 1235px;
+}
+input {
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+}
+
+.auth-wrapper {
+  background-color: transparent;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.singinbutton:hover {
+  color: #0f1115;
+  background-color: #dee6ee;
+  border-color: #dce5ed;
+}
+.singinbutton {
+  text-decoration: none;
+}
+.auth-box {
+  height: 490px;
+  background-color: white;
+  width: 332px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 80px auto 120px;
+}
+
+.medflex-logo {
+  padding: 21px;
+}
+
+.login-content {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  height: 100%;
+  padding-left: 21px;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.loginbuttons {
+  background-color: red;
+}
+
+.logosvg {
+  width: 157px;
+  height: 45px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #0f1115;
+  outline: none;
+  appearance: none;
+  background-color: #ffffff;
+  background-clip: padding-box;
+  border: 1px solid #cdd6dc;
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+input:focus {
+  border: 1px solid #88b5f7;
+  outline: 4px solid #f0f1f4;
+}
+.error-border {
+  border: 1px solid red;
+}
+
+.form-label {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.text-danger {
+  padding-left: 4px;
+  color: rgb(255, 90, 57);
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+
+.input-container {
+  margin-bottom: 20px;
+  padding: 0px 20px 0px 0px;
+  width: 100%;
+}
+
+::placeholder {
+  color: #a8b3bb;
+  opacity: 1;
+}
+
+h4 {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-style: normal;
+  font-weight: 600;
+  color: rgb(39, 39, 39);
+  font-size: 1.52rem;
+  line-height: 22px;
+  margin-bottom: 2rem;
+}
+
+.ri-eye-line:before {
+  content: "\ecb5";
+  color: rgba(17, 106, 239, 1);
+}
+
+.eye-icon {
+  position: absolute;
+  width: 40px;
+  top: 0px;
+  right: 0px;
+  height: 36px;
+  outline: none;
+  border: none;
+  margin-left: 1px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  border-left: 1px solid #d8e2eb;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border: 1px solid #e1e2e3;
+  box-shadow: inset 0px 0px 0px 0px rgba(255, 255, 255, 0.25),
+    inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.eye-icon:hover {
+  background-color: rgb(216, 226, 235);
+}
+
+.eye-icon.active {
+  color: #272727;
+}
+
+.login-conatiner {
+  position: relative;
+  margin-top: 17px;
+  padding-left: 1px;
+}
+
+.forget-password {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -4px;
+  margin-bottom: 19px;
+  margin-right: 20px;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.forget:hover {
+  color: #21252a;
+}
+.error-tooltip {
+  position: absolute;
+  color: red;
+  font-size: 12px;
+  top: 67px;
+  left: 1px;
+  z-index: 5;
+  white-space: nowrap;
+}
+
+.input-container {
+  position: relative;
+}
+
+.google-button {
+  width: 44px;
+  position: absolute;
+  height: 44px;
+  left: 108px;
+  bottom: -58px;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.google-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 1px 8px 3px rgba(0, 0, 0, 0.15);
+}
+
+.google-button img {
+  width: 26px;
+  height: 26px;
+}
+
+@media (min-width: 300px) {
+  .bodyparent {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sperator {
+    width: 0;
+  }
+
+  .auth-wrapper {
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin-top: 0px;
+  }
+
+  .auth-box {
+    height: 439px;
+  }
+
+  .logosvg {
+    width: 138px;
+    height: 39.9px;
+  }
+
+  .medflex-logo {
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+
+  .login-conatiner {
+    margin-top: 7.4px;
+    padding-left: 0px;
+  }
+
+  .login-content {
+    padding-left: 20px;
+  }
+
+  .form-label {
+    font-weight: 378.5;
+    color: rgb(39, 39, 39);
+    font-size: 14.4px;
+    margin-bottom: 9.5px;
+  }
+  .input-group > .form-control {
+    padding-bottom: 6.5px;
+    width: 85%;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    z-index: 1;
+  }
+  .form-control {
+    padding: 0.365rem 0.75rem;
+    font-size: 0.9rem;
+    padding-top: 6.5px;
+  }
+
+  .eye-icon {
+    width: 40px;
+    top: 0px;
+    text-align: center;
+    right: 0px;
+    padding-right: 0.1px;
+    padding-bottom: 1px;
+    height: 36px;
+    margin-left: 1px;
+    font-size: 14px;
+    border-radius: 6px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 1px solid #e1e2e3;
+    box-shadow: inset 0px 0px 0px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .input-container {
+    margin-bottom: 16.5px;
+  }
+
+  .forget {
+    font-size: 14.4px;
+    text-decoration: underline;
+    color: rgb(76, 84, 94);
+    cursor: pointer;
+  }
+
+  .button-container {
+    display: grid;
+    gap: 8px;
+    padding-right: 20px;
+  }
+
+  .loginbutton {
+    color: #ffffff;
+    background-color: #116aef;
+    border: 1px solid #116aef;
+    outline: none;
+    padding: 0.375rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    line-height: 1.5;
+    box-shadow: inset 1.4px 1.5px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .loginbutton:hover {
+    background-color: #0e5acb;
+  }
+
+  .singinbutton {
+    color: #0f1138;
+    background-color: #d8e2eb;
+    border: 1px solid #dce5ed;
+    padding: 0.375rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    line-height: 1.5;
+    text-align: center;
+    box-shadow: inset 1.4px 1.5px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  h4 {
+    font-size: 20.544px;
+    margin-bottom: 24.5px;
+    margin-top: -3.5px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .forget-password {
+    margin-top: -5.5px;
+    margin-bottom: 20.5px;
+  }
+}
+@media (min-width: 370px) {
+  h4 {
+    font-size: 20.6102px;
+  }
+  .forget {
+    font-weight: 400;
+    color: rgb(76, 84, 94);
+  }
+}
+@media (min-width: 400px) {
+  .bodyparent {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sperator {
+    width: 0;
+  }
+
+  .auth-wrapper {
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin-top: 0px;
+  }
+
+  .auth-box {
+    height: 439px;
+  }
+
+  .logosvg {
+    width: 138px;
+    height: 39.9px;
+  }
+
+  .medflex-logo {
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+
+  .login-conatiner {
+    margin-top: 7.4px;
+    padding-left: 0px;
+  }
+
+  .login-content {
+    padding-left: 20px;
+  }
+
+  .form-label {
+    font-weight: 378.5;
+    color: rgb(39, 39, 39);
+    font-size: 14.4px;
+    margin-bottom: 9.5px;
+  }
+  .input-group > .form-control {
+    padding-bottom: 6.5px;
+    width: 85%;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    z-index: 1;
+  }
+  .form-control {
+    padding: 0.365rem 0.75rem;
+    font-size: 0.9rem;
+    padding-top: 6.5px;
+  }
+
+  .eye-icon {
+    width: 40px;
+    top: 0px;
+    text-align: center;
+    right: 0px;
+    padding-right: 0.1px;
+    padding-bottom: 1px;
+    height: 36px;
+    margin-left: 1px;
+    font-size: 14px;
+    border-radius: 6px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 1px solid #e1e2e3;
+    box-shadow: inset 0px 0px 0px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .input-container {
+    margin-bottom: 16.5px;
+  }
+
+  .forget {
+    text-decoration: underline;
+  }
+
+  .button-container {
+    display: grid;
+    gap: 8px;
+    padding-right: 20px;
+  }
+
+  .loginbutton {
+    color: #ffffff;
+    background-color: #116aef;
+    border: 1px solid #116aef;
+    outline: none;
+    padding: 0.375rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    line-height: 1.5;
+    box-shadow: inset 1.4px 1.5px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .loginbutton:hover {
+    background-color: #0e5acb;
+  }
+
+  .singinbutton {
+    color: #0f1138;
+    background-color: #d8e2eb;
+    border: 1px solid #dce5ed;
+    padding: 0.375rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    line-height: 1.5;
+    text-align: center;
+    box-shadow: inset 1.4px 1.5px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  h4 {
+    font-size: 20.6707px;
+    margin-bottom: 25px;
+    margin-top: -4px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .forget-password {
+    margin-top: -5.5px;
+    margin-bottom: 20.2px;
+  }
+}
+
+@media (min-width: 576px) {
+  .bodyparent {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sperator {
+    width: 0;
+  }
+
+  .auth-wrapper {
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin-top: 0px;
+  }
+
+  .auth-box {
+    height: 440px;
+  }
+
+  .logosvg {
+    width: 138px;
+    height: 39.9px;
+  }
+
+  .medflex-logo {
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+
+  .login-conatiner {
+    margin-top: 7.4px;
+    padding-left: 0px;
+  }
+
+  .login-content {
+    padding-left: 20px;
+  }
+
+  .form-label {
+    font-size: 0.9rem;
+    margin-bottom: 9.5px;
+  }
+  .input-group > .form-control {
+    padding-top: 6.2px;
+    padding-bottom: 7px;
+    width: 85%;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    z-index: 1;
+  }
+  .form-control {
+    padding: 0.365rem 0.75rem;
+    font-size: 0.9rem;
+    padding-top: 6px;
+    padding-bottom: 6.5px;
+  }
+
+  .eye-icon {
+    width: 40px;
+    top: 0px;
+    text-align: center;
+    right: 0px;
+    padding-right: 0.1px;
+    padding-bottom: 3px;
+    height: 36px;
+    margin-left: 1px;
+    font-size: 14px;
+    border-radius: 6px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 1px solid #e1e2e3;
+    box-shadow: inset 0px 0px 0px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .input-container {
+    margin-bottom: 16.5px;
+  }
+
+  .forget {
+    text-decoration: underline;
+  }
+
+  .button-container {
+    display: grid;
+    gap: 8px;
+    padding-right: 20px;
+  }
+
+  .loginbutton {
+    color: #ffffff;
+    background-color: #116aef;
+    border: 1px solid #116aef;
+    outline: none;
+    padding: 0.375rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    line-height: 1.5;
+    box-shadow: inset 1.4px 1.5px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .loginbutton:hover {
+    background-color: #0e5acb;
+  }
+
+  .singinbutton {
+    color: #0f1138;
+    background-color: #d8e2eb;
+    border: 1px solid #dce5ed;
+    padding: 0.375rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    line-height: 1.5;
+    text-align: center;
+    box-shadow: inset 1.4px 1.5px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  h4 {
+    font-size: 21.0816px;
+    margin-bottom: 25px;
+    margin-top: -3.5px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .forget-password {
+    margin-top: -5.5px;
+    margin-bottom: 19.6px;
+  }
+}
+@media (min-width: 992px) {
+  .sperator {
+    width: 636px;
+  }
+
+  .auth-wrapper {
+    justify-content: end;
+    align-items: center;
+    width: 300px;
+    margin-top: 0px;
+  }
+
+  .auth-box {
+    height: 440px;
+  }
+
+  .logosvg {
+    width: 138px;
+    height: 39.9px;
+  }
+
+  .medflex-logo {
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+
+  .login-conatiner {
+    margin-top: 7.4px;
+    padding-left: 0px;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .login-content {
+    padding-left: 20px;
+  }
+
+  .form-label {
+    font-size: 0.9rem;
+    margin-bottom: 9.5px;
+  }
+  .input-group > .form-control {
+    padding-top: 6.5px;
+    padding-bottom: 7px;
+    width: 85%;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    z-index: 1;
+  }
+  .form-control {
+    padding: 0.365rem 0.75rem;
+    font-size: 0.9rem;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .eye-icon {
+    width: 40px;
+    top: 0px;
+    text-align: center;
+    right: 0px;
+    padding-right: 0.1px;
+    padding-bottom: 1px;
+    height: 36px;
+    margin-left: 1px;
+    font-size: 14px;
+    border-radius: 6px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 1px solid #e1e2e3;
+    box-shadow: inset 0px 0px 0px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .input-container {
+    margin-bottom: 16.5px;
+  }
+
+  .forget {
+    text-decoration: underline;
+  }
+
+  .button-container {
+    display: grid;
+    gap: 8px;
+    padding-right: 20px;
+  }
+
+  .loginbutton {
+    color: #ffffff;
+    background-color: #116aef;
+    border: 1px solid #116aef;
+    outline: none;
+    padding: 0.375rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    line-height: 1.5;
+    box-shadow: inset 1.4px 1.5px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .loginbutton:hover {
+    background-color: #0e5acb;
+  }
+
+  .singinbutton {
+    color: #0f1138;
+    background-color: #d8e2eb;
+    border: 1px solid #dce5ed;
+    padding: 0.375rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    line-height: 1.5;
+    text-align: center;
+    box-shadow: inset 1.4px 1.5px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  h4 {
+    font-size: 21.39px;
+    margin-bottom: 25px;
+    margin-top: -3.5px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .forget-password {
+    margin-top: -5.5px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sperator {
+    width: 996px;
+  }
+
+  .auth-wrapper {
+    justify-content: end;
+    align-items: center;
+    width: 300px;
+    margin-top: 0px;
+  }
+
+  .auth-box {
+    height: 440px;
+  }
+
+  .logosvg {
+    width: 138px;
+    height: 39.9px;
+  }
+
+  .medflex-logo {
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+
+  .login-conatiner {
+    margin-top: 7.4px;
+    padding-left: 0px;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .login-content {
+    padding-left: 20px;
+  }
+
+  .form-label {
+    font-size: 0.9rem;
+    margin-bottom: 9.5px;
+  }
+  .input-group > .form-control {
+    padding-top: 6.5px;
+    padding-bottom: 7px;
+    width: 85%;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    z-index: 1;
+  }
+  .form-control {
+    padding: 0.365rem 0.75rem;
+    font-size: 0.9rem;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .eye-icon {
+    width: 40px;
+    top: 0px;
+    text-align: center;
+    right: 0px;
+    padding-right: 0.1px;
+    padding-bottom: 1px;
+    height: 36px;
+    margin-left: 1px;
+    font-size: 14px;
+    border-radius: 6px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: inset 0px 0px 0px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .input-container {
+    margin-bottom: 16.5px;
+  }
+
+  .forget {
+    text-decoration: underline;
+  }
+
+  .button-container {
+    display: grid;
+    gap: 8px;
+    padding-right: 20px;
+  }
+
+  .loginbutton {
+    color: #ffffff;
+    background-color: #116aef;
+    border: 1px solid #116aef;
+    outline: none;
+    padding: 0.375rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    line-height: 1.5;
+    box-shadow: inset 1.4px 1.5px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .loginbutton:hover {
+    background-color: #0e5acb;
+  }
+
+  .singinbutton {
+    color: #0f1138;
+    background-color: #d8e2eb;
+    border: 1px solid #dce5ed;
+    padding: 0.375rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    line-height: 1.5;
+    text-align: center;
+    box-shadow: inset 1.4px 1.5px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  h4 {
+    font-size: 21.39px;
+    margin-bottom: 25px;
+    margin-top: -3.5px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .forget-password {
+    margin-top: -5.5px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .sperator {
+    width: 996px;
+  }
+
+  .auth-wrapper {
+    justify-content: end;
+    align-items: center;
+    width: 300px;
+    margin-top: 0px;
+  }
+
+  .auth-box {
+    height: 440px;
+  }
+
+  .logosvg {
+    width: 138px;
+    height: 39.9px;
+  }
+
+  .medflex-logo {
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+
+  .login-conatiner {
+    margin-top: 7.4px;
+    padding-left: 0px;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .login-content {
+    padding-left: 20px;
+  }
+
+  .form-label {
+    font-size: 0.9rem;
+    margin-bottom: 9.5px;
+  }
+  .input-group > .form-control {
+    padding-top: 6.5px;
+    padding-bottom: 6.5px;
+    width: 85%;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    z-index: 1;
+  }
+  .form-control {
+    padding: 0.365rem 0.75rem;
+    font-size: 0.9rem;
+    padding-top: 6.4px;
+    padding-bottom: 6px;
+  }
+
+  .eye-icon {
+    width: 40px;
+    top: 0px;
+    text-align: center;
+    right: 0px;
+    padding-right: 0.1px;
+    padding-bottom: 1px;
+    height: 36px;
+    margin-left: 1px;
+    font-size: 14px;
+    border-radius: 6px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: inset 0px 0px 0px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .input-container {
+    margin-bottom: 16.5px;
+  }
+
+  .forget {
+    text-decoration: underline;
+  }
+
+  .button-container {
+    display: grid;
+    gap: 8px;
+    padding-right: 20px;
+  }
+
+  .loginbutton {
+    color: #ffffff;
+    background-color: #116aef;
+    border: 1px solid #116aef;
+    outline: none;
+    padding: 0.375rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    line-height: 1.5;
+    box-shadow: inset 1.4px 1.5px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .loginbutton:hover {
+    background-color: #0e5acb;
+  }
+
+  .singinbutton {
+    color: #0f1138;
+    background-color: #d8e2eb;
+    border: 1px solid #dce5ed;
+    padding: 0.375rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    line-height: 1.5;
+    text-align: center;
+    box-shadow: inset 1.4px 1.5px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  h4 {
+    font-size: 21.6px;
+    margin-bottom: 24.5px;
+    margin-top: -3.5px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .forget-password {
+    margin-top: -5.5px;
+    margin-bottom: 20.5px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .sperator {
+    width: 996px;
+  }
+
+  .auth-wrapper {
+    justify-content: end;
+    align-items: center;
+    width: 300px;
+    margin-top: 0px;
+  }
+
+  .auth-box {
+    height: 442.125px;
+  }
+
+  .logosvg {
+    width: 138px;
+    height: 39.9px;
+  }
+
+  .medflex-logo {
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+
+  .login-conatiner {
+    margin-top: 7.4px;
+    padding-left: 0px;
+  }
+
+  .login-content {
+    padding-left: 20px;
+  }
+
+  .form-label {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  .set-style {
+    margin-bottom: 8.5px;
+  }
+  .input-group > .form-control {
+    padding-top: 7px;
+    padding-bottom: 6.5px;
+    width: 85%;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    z-index: 1;
+  }
+  .form-control {
+    padding: 0.365rem 0.75rem;
+    font-size: 0.9rem;
+    padding-top: 6.4px;
+    padding-bottom: 6px;
+  }
+  .eye-icon {
+    width: 40px;
+    top: 0px;
+    text-align: center;
+    right: 0px;
+    padding-right: 0.5px;
+    padding-bottom: 2px;
+    height: 37px;
+    margin-left: 1px;
+    font-size: 14.4px;
+    border-radius: 6px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: inset 0px 0px 0px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .input-container {
+    margin-bottom: 16.5px;
+  }
+
+  .forget {
+    text-decoration: underline;
+  }
+
+  .button-container {
+    display: grid;
+    gap: 8px;
+    padding-right: 20px;
+  }
+
+  .loginbutton {
+    color: #ffffff;
+    background-color: #116aef;
+    border: 1px solid #116aef;
+    outline: none;
+    padding: 6.5px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    line-height: 1.5;
+    box-shadow: inset 1.4px 1.5px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .loginbutton:hover {
+    background-color: #0e5acb;
+  }
+
+  .singinbutton {
+    color: #0f1138;
+    background-color: #d8e2eb;
+    border: 1px solid #dce5ed;
+    padding: 0.375rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    line-height: 1.5;
+    text-align: center;
+    box-shadow: inset 1.4px 1.5px 0px rgba(255, 255, 255, 0.25),
+      inset -1.5px -1.5px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  h4 {
+    font-size: 21.6px;
+    margin-bottom: 23.5px;
+    margin-top: -3.5px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .forget-password {
+    margin-top: -5.5px;
+    margin-bottom: 19.5px;
+  }
+}
